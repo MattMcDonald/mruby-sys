@@ -1,0 +1,9 @@
+[package]
+name = "mruby-sys"
+version = "0.1.0"
+authors = ["Matt McDonald <mail.matt.mcdonald@gmail.com>"]
+edition = "2018"
+links = "mruby"
+build = "build.rs"
+
+[dependencies]
