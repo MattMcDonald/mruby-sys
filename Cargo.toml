@@ -5,6 +5,13 @@ authors = ["Matt McDonald <mail.matt.mcdonald@gmail.com>"]
 edition = "2018"
 links = "mruby"
 build = "build.rs"
+description = "low level rust bindings for mruby"
+repository = "https://github.com/MattMcDonald/mruby-sys"
+license = "MIT License"
+readme = "README.md"
+keywords = ["ruby", "mruby", "ffi"]
+categories = ["external-ffi-bindings"]
+
 
 [dependencies]
 
