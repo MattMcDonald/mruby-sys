@@ -1,11 +1,12 @@
 # mruby-sys
-mruby bindings for rust
+Low level mruby bindings for rust
 
-This is a WIP crate to provide low level bindings for mruby in rust.
+Currently built against statically linked mruby 2.0.1
 
-Special thanks to this guide for helping: https://kornel.ski/rust-sys-crate
+This is currently a WIP, very basic things might not work, or worse.
+
 
 Todo list:
 Enable gems
 Actually test this at all
-=======
+
