@@ -20,5 +20,13 @@ Most of the work happens in the build.rs script which:
 - Web Assembly?!?
 - Reasonable support for other mruby build options, i.e. building with no gem support
 
+## Release Notes
+
+### 0.1.1
+- Fixed build paths so that other crates can actually depend on us
+
+### 0.1.0
+- Initial build with hello world working
+
 ## License
 Copyright © 2019, Matthew McDonald. Released under the MIT License.
