@@ -17,8 +17,18 @@ fn build() {
         .status()
         .unwrap();
 
+    // we run make we that we can compile ruby libs to c
+    Command::new("make")
+        .current_dir("target/vendor")
+        .status()
+        .unwrap();
+
     let mut build = cc::Build::new();
+    
+
     build.include("target/vendor/include");
+
+    build.file("target/vendor/build/host/mrblib/mrblib.c");
 
     for entry in glob("target/vendor/src/*.c").unwrap() {
         if let Ok(path) = entry {
@@ -27,6 +37,29 @@ fn build() {
         }
     }
 
+    for entry in glob("target/vendor/mrblib/*.c").unwrap() {
+        if let Ok(path) = entry {
+            println!("{:?}", path.display());
+            build.file(path);
+        }
+    }
+
+    let gems = vec![""];
+
+for gem in gems{
+    let path = format!("target/vendor/mrbgems/{}/src/*.c", gem);
+    for entry in glob(&path).unwrap() {
+        if let Ok(path) = entry {
+            println!("{:?}", path.display());
+            build.file(path);
+        }
+    }
+}
+
+
+    build.warnings(false);
+    build.static_flag(true);
+    build.define("DISABLE_GEMS", "TRUE");
     build.compile("mruby");
 }
 
