@@ -28,9 +28,6 @@ fn build() {
     }
 
     build.compile("mruby");
-    //     println!("cargo:rustc-link-search=native=target/vendor/build/host/lib");
-    //     println!("cargo:rustc-link-lib=static=mruby");
-    //     println!("cargo:rustc-link-lib=static=mruby_core");
 }
 
 fn bindgen() {
