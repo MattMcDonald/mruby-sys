@@ -16,10 +16,6 @@ fn build() {
         .arg("target")
         .status()
         .unwrap();
-    Command::new("make")
-        .current_dir("target/vendor")
-        .status()
-        .unwrap();
 
     let mut build = cc::Build::new();
     build.include("target/vendor/include");
@@ -40,7 +36,8 @@ fn build() {
 fn bindgen() {
     let bindings = bindgen::Builder::default()
         .header("include/wrapper.h")
-        .whitelist_type("mrb_state")
+        .opaque_type("mrb_heap_page") // tests were failing, this might be fixed in newer bindgen
+        .generate_comments(false) // doctests were failing because they coppied C code...
         .generate()
         .expect("Unable to generate bindings");
 
