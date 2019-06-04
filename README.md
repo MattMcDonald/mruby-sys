@@ -14,7 +14,7 @@ Most of the work happens in the build.rs script which:
 
 
 ## Todo list:
-- Enable support for chosing gems
+- Enable support for choosing gems
 - Support toolchains besides clang
 - Reasonable support for passing along compiler flags to the minirake build, especially debug vs release builds.
 - Web Assembly?!?
