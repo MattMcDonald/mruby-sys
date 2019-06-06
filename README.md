@@ -22,6 +22,9 @@ Most of the work happens in the build.rs script which:
 
 ## Release Notes
 
+### 0.2.0
+- Generating bindings for string.h
+
 ### 0.1.1
 - Fixed build paths so that other crates can actually depend on us
 
